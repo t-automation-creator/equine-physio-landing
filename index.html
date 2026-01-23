@@ -204,8 +204,7 @@
             height: 580px;
             background: #1a1a1a;
             border-radius: 40px;
-            padding: 4px;
-            padding-top: 0;
+            padding: 12px;
             box-shadow: 
                 0 50px 100px -20px rgba(0, 0, 0, 0.25),
                 0 30px 60px -30px rgba(0, 0, 0, 0.3),
@@ -216,9 +215,36 @@
             width: 100%;
             height: 100%;
             background: var(--background);
-            border-radius: 40px 40px 36px 36px;
+            border-radius: 32px;
             overflow: hidden;
             position: relative;
+        }
+
+        /* Black bar to cover video's dynamic island */
+        .phone-screen::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 36px;
+            background: #000;
+            z-index: 10;
+            border-radius: 32px 32px 0 0;
+        }
+
+        /* Dynamic island notch on top of black bar */
+        .phone-screen::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 24px;
+            background: #1a1a1a;
+            border-radius: 20px;
+            z-index: 11;
         }
 
         .phone-screen video,
