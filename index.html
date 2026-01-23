@@ -989,40 +989,80 @@
         }
 
         .checkbox-label {
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1rem;
+            padding: 0.875rem 0.75rem;
             background: #f8f8f8;
-            border-radius: 0.75rem;
+            border-radius: 0.625rem;
             cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 500;
             transition: all 0.2s;
             border: 1.5px solid #e5e5e5;
-            text-align: center;
         }
 
         .checkbox-label:hover {
             background: #f0f0f0;
-            border-color: #d0d0d0;
+            border-color: #d5d5d5;
         }
 
+        /* Hide actual checkbox */
         .checkbox-label input[type="checkbox"] {
-            width: auto;
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
             margin: 0;
-            accent-color: var(--gradient-start);
         }
 
-        .checkbox-label input[type="checkbox"]:checked + span {
-            color: var(--gradient-start);
+        /* Chip content container */
+        .chip-content {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
             font-weight: 500;
+            color: #444;
         }
 
+        /* Custom checkbox indicator */
+        .chip-check {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.2s;
+        }
+
+        .chip-check svg {
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.15s;
+        }
+
+        /* Selected state */
         .checkbox-label:has(input:checked) {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
-            border-color: var(--gradient-start);
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(6, 182, 212, 0.08) 100%);
+            border-color: #8b5cf6;
+        }
+
+        .checkbox-label:has(input:checked) .chip-check {
+            background: #8b5cf6;
+            border-color: #8b5cf6;
+        }
+
+        .checkbox-label:has(input:checked) .chip-check svg {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .checkbox-label:has(input:checked) .chip-content {
+            color: #6d28d9;
         }
 
         .modal .btn-primary {
@@ -1418,32 +1458,16 @@
             }
 
             .checkbox-label {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 0.5rem;
                 padding: 0.75rem 0.625rem;
-                font-size: 0.875rem;
-                font-weight: 500;
-                border-radius: 0.75rem;
-                background: #f8f8f8;
-                border: 1.5px solid #e5e5e5;
-                text-align: center;
             }
 
-            .checkbox-label input[type="checkbox"] {
+            .chip-content {
+                font-size: 0.8rem;
+            }
+
+            .chip-check {
                 width: 16px;
                 height: 16px;
-                flex-shrink: 0;
-            }
-
-            .checkbox-label span {
-                line-height: 1.2;
-            }
-
-            .checkbox-label:has(input:checked) {
-                background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
-                border-color: var(--gradient-start);
             }
 
             .modal .btn-primary {
@@ -1946,27 +1970,45 @@
                     <div class="checkbox-group">
                         <label class="checkbox-label">
                             <input type="checkbox" name="stress_areas" value="notes">
-                            <span>Client Notes</span>
+                            <span class="chip-content">
+                                <span class="chip-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                Client Notes
+                            </span>
                         </label>
                         <label class="checkbox-label">
                             <input type="checkbox" name="stress_areas" value="booking">
-                            <span>Scheduling</span>
+                            <span class="chip-content">
+                                <span class="chip-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                Scheduling
+                            </span>
                         </label>
                         <label class="checkbox-label">
                             <input type="checkbox" name="stress_areas" value="invoicing">
-                            <span>Invoicing</span>
+                            <span class="chip-content">
+                                <span class="chip-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                Invoicing
+                            </span>
                         </label>
                         <label class="checkbox-label">
                             <input type="checkbox" name="stress_areas" value="multi_horse">
-                            <span>Multi-Horse</span>
+                            <span class="chip-content">
+                                <span class="chip-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                Multi-Horse
+                            </span>
                         </label>
                         <label class="checkbox-label">
                             <input type="checkbox" name="stress_areas" value="yard_visits">
-                            <span>Yard Visits</span>
+                            <span class="chip-content">
+                                <span class="chip-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                Yard Visits
+                            </span>
                         </label>
                         <label class="checkbox-label">
                             <input type="checkbox" name="stress_areas" value="reporting">
-                            <span>Reporting</span>
+                            <span class="chip-content">
+                                <span class="chip-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                                Reporting
+                            </span>
                         </label>
                     </div>
                 </div>
