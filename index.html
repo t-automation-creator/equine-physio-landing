@@ -62,12 +62,22 @@
 
         .logo {
             display: flex;
+            flex-direction: column;
             align-items: center;
             text-decoration: none;
+            gap: 0.15rem;
+        }
+
+        .logo-prefix {
+            font-size: 0.7rem;
+            color: var(--gray-500);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .logo-img {
-            height: 40px;
+            height: 28px;
             width: auto;
         }
 
@@ -202,49 +212,21 @@
             position: relative;
             width: 280px;
             height: 580px;
-            background: #1a1a1a;
-            border-radius: 40px;
-            padding: 12px;
+            background: #000;
+            border-radius: 44px;
+            padding: 8px;
             box-shadow: 
-                0 50px 100px -20px rgba(0, 0, 0, 0.25),
-                0 30px 60px -30px rgba(0, 0, 0, 0.3),
-                inset 0 0 0 2px #333;
+                0 25px 50px -12px rgba(0, 0, 0, 0.25),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.1);
         }
 
         .phone-screen {
             width: 100%;
             height: 100%;
-            background: var(--background);
-            border-radius: 32px;
+            background: #fff;
+            border-radius: 36px;
             overflow: hidden;
             position: relative;
-        }
-
-        /* Black bar to cover video's dynamic island */
-        .phone-screen::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 36px;
-            background: #000;
-            z-index: 10;
-            border-radius: 32px 32px 0 0;
-        }
-
-        /* Dynamic island notch on top of black bar */
-        .phone-screen::after {
-            content: '';
-            position: absolute;
-            top: 8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90px;
-            height: 24px;
-            background: #1a1a1a;
-            border-radius: 20px;
-            z-index: 11;
         }
 
         .phone-screen video,
@@ -723,6 +705,7 @@
     <!-- Navigation -->
     <nav>
         <a href="https://lumineerdigital.com" class="logo">
+            <span class="logo-prefix">Brought to you by</span>
             <img src="lumineer-logo.png" alt="Lumineer Digital" class="logo-img">
         </a>
         <a href="#" class="nav-cta" onclick="openModal()">Join Beta</a>
