@@ -1281,6 +1281,214 @@
                 order: 3;
                 margin-top: 1.5rem;
             }
+
+            .flagship-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+
+            .coming-soon-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .coming-soon-section {
+                padding: 1.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .flagship-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, var(--gray-50) 0%, white 100%);
+        }
+
+        .features-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .features-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .features-header h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .features-header p {
+            font-size: 1rem;
+            color: var(--gray-500);
+        }
+
+        .flagship-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            border: 1px solid var(--gray-200);
+            transition: all 0.2s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.1);
+            border-color: var(--primary);
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--primary);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .feature-card h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-card p {
+            font-size: 0.8rem;
+            color: var(--gray-500);
+            line-height: 1.4;
+        }
+
+        .coming-soon-section {
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coming-soon-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .coming-soon-header {
+            text-align: center;
+            margin-bottom: 1.25rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .coming-soon-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            color: white;
+            padding: 0.35rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .coming-soon-badge svg {
+            width: 14px;
+            height: 14px;
+            stroke: white;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .coming-soon-header h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .coming-soon-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .coming-soon-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.2s ease;
+        }
+
+        .coming-soon-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .coming-soon-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .coming-soon-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke: white;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .coming-soon-card h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0.25rem;
+        }
+
+        .coming-soon-card p {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.4;
         }
     </style>
 </head>
@@ -1362,6 +1570,96 @@
                     <p>Chasing payments and creating invoices manually eats into your valuable time.</p>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="features-container">
+            <div class="features-header">
+                <h2>Built for Equine Physios</h2>
+                <p>All your practice management in one place.</p>
+            </div>
+
+            <!-- Flagship Features -->
+            <div class="flagship-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                    </div>
+                    <h3>Dashboard</h3>
+                    <p>Daily schedule, metrics, and overdue items at a glance.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>Clients & Horses</h3>
+                    <p>Store owner details, horse profiles, and treatment history.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </div>
+                    <h3>Appointments</h3>
+                    <p>Book visits, track status, and calculate travel time.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    </div>
+                    <h3>Treatment Notes</h3>
+                    <p>Record findings and track progress for each horse.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3>Invoicing</h3>
+                    <p>Generate invoices, export PDFs, and log payments.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                    </div>
+                    <h3>Mobile Ready</h3>
+                    <p>Works on any device, designed for use in the field.</p>
+                </div>
+            </div>
+
+            <!-- Coming Soon -->
+            <div class="coming-soon-section">
+                <div class="coming-soon-header">
+                    <div class="coming-soon-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span>Coming Soon</span>
+                    </div>
+                    <h3>On the Roadmap</h3>
+                </div>
+
+                <div class="coming-soon-grid">
+                    <div class="coming-soon-card">
+                        <div class="coming-soon-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/><path d="M7.5 13a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/><path d="M16.5 13a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/></svg>
+                        </div>
+                        <h4>AI Assistant</h4>
+                        <p>Draft emails, summarize notes, and get practice insights.</p>
+                    </div>
+
+                    <div class="coming-soon-card">
+                        <div class="coming-soon-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18h.01"/><path d="M7 21h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2z"/><path d="M12 6v6"/></svg>
+                        </div>
+                        <h4>Native Apps</h4>
+                        <p>Dedicated apps for iOS and Android app stores.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
