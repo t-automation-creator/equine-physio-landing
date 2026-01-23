@@ -584,7 +584,7 @@
         }
 
         .challenges-section h2 {
-            color: white;
+            color: var(--gray-900);
             font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 3rem;
@@ -1288,7 +1288,7 @@
             }
 
             .coming-soon-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .coming-soon-section {
@@ -1443,7 +1443,7 @@
 
         .coming-soon-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
             position: relative;
             z-index: 1;
@@ -1662,6 +1662,22 @@
                         </div>
                         <h4>Native Apps</h4>
                         <p>Dedicated apps for iOS and Android app stores.</p>
+                    </div>
+
+                    <div class="coming-soon-card">
+                        <div class="coming-soon-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 6v2m0 8v2"/></svg>
+                        </div>
+                        <h4>Xero & QuickBooks</h4>
+                        <p>Sync invoices and payments with your accounting software.</p>
+                    </div>
+
+                    <div class="coming-soon-card">
+                        <div class="coming-soon-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                        </div>
+                        <h4>Stripe Payments</h4>
+                        <p>Accept card payments directly through the app.</p>
                     </div>
                 </div>
             </div>
