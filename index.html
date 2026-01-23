@@ -512,6 +512,58 @@
             font-size: 0.95rem;
         }
 
+        /* Challenges Section */
+        .challenges-section {
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            text-align: center;
+        }
+
+        .challenges-section h2 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .challenges-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .challenge-tag {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .challenges-cta {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .challenges-cta a {
+            color: white;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .challenges-cta a:hover {
+            opacity: 0.9;
+        }
+
         /* Features Section */
         .features-section {
             padding: 6rem 2rem;
@@ -991,6 +1043,21 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Challenges Section -->
+    <section class="challenges-section">
+        <h2>Help us tackle the biggest challenges for Equine Physios</h2>
+        <div class="challenges-grid">
+            <div class="challenge-tag">📋 Scattered client notes</div>
+            <div class="challenge-tag">📅 Booking headaches</div>
+            <div class="challenge-tag">💸 Invoice chaos</div>
+            <div class="challenge-tag">🏇 Multi-horse tracking</div>
+            <div class="challenge-tag">🚗 Yard visit scheduling</div>
+            <div class="challenge-tag">📱 No mobile-friendly tools</div>
+            <div class="challenge-tag">📊 Difficulty reporting</div>
+        </div>
+        <p class="challenges-cta">Can you relate to any of these? <a onclick="openModal()">Get involved →</a></p>
     </section>
 
     <!-- Problem Section -->
