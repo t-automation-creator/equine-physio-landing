@@ -225,6 +225,55 @@
             background-clip: text;
         }
 
+        /* Flip Clock Animation */
+        .flip-container {
+            display: inline-block;
+            position: relative;
+            height: 1.1em;
+            overflow: hidden;
+            vertical-align: bottom;
+        }
+
+        .flip-word {
+            display: inline-block;
+            position: relative;
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: var(--gradient-start);
+        }
+
+        .flip-word.flip-out {
+            animation: flipOut 0.3s ease-in forwards;
+        }
+
+        .flip-word.flip-in {
+            animation: flipIn 0.3s ease-out forwards;
+        }
+
+        @keyframes flipOut {
+            0% {
+                transform: rotateX(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: rotateX(-90deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes flipIn {
+            0% {
+                transform: rotateX(90deg);
+                opacity: 0;
+            }
+            100% {
+                transform: rotateX(0deg);
+                opacity: 1;
+            }
+        }
+
         .hero p {
             font-size: 1.25rem;
             color: var(--gray-500);
@@ -1027,7 +1076,7 @@
                     <span>✨</span>
                     <span>Help us build something special · Your feedback is invaluable</span>
                 </div>
-                <h1>Stop Juggling Paperwork.<br><span>Focus on What Matters.</span></h1>
+                <h1>Stop Juggling <span class="flip-container"><span class="flip-word" id="flip-text">Appointments.</span></span><br><span>Focus on What Matters.</span></h1>
                 <p>The all-in-one app for equine physiotherapists that streamlines your appointments, treatments, and invoicing.</p>
                 <div class="hero-buttons">
                     <button class="btn-primary pulse" onclick="openModal()">
@@ -1240,6 +1289,33 @@
         document.querySelectorAll('.animate-on-scroll').forEach(el => {
             observer.observe(el);
         });
+
+        // Flip clock animation for hero headline
+        const flipWords = ['Appointments.', 'Invoicing.', 'Notes.', 'Reporting.'];
+        let currentIndex = 0;
+        const flipText = document.getElementById('flip-text');
+
+        function flipToNextWord() {
+            // Flip out current word
+            flipText.classList.add('flip-out');
+            
+            setTimeout(() => {
+                // Change the word
+                currentIndex = (currentIndex + 1) % flipWords.length;
+                flipText.textContent = flipWords[currentIndex];
+                
+                // Remove flip-out, add flip-in
+                flipText.classList.remove('flip-out');
+                flipText.classList.add('flip-in');
+                
+                setTimeout(() => {
+                    flipText.classList.remove('flip-in');
+                }, 300);
+            }, 300);
+        }
+
+        // Start the flip animation cycle
+        setInterval(flipToNextWord, 2000);
     </script>
 </body>
 </html>
