@@ -7,13 +7,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* CVS Health inspired color palette - matching the app */
-            --cvs-red: #CC0000;
-            --cvs-red-dark: #A30000;
-            --cvs-blue: #0066CC;
-            --cvs-blue-dark: #0052A3;
-            --cvs-green: #00875A;
-            --cvs-green-light: #D4F5E9;
+            /* Lumineer Digital inspired color palette - purple to cyan gradient */
+            --primary: #8B5CF6;
+            --primary-dark: #7C3AED;
+            --secondary: #06B6D4;
+            --secondary-dark: #0891B2;
+            --accent: #A855F7;
+            --gradient-start: #8B5CF6;
+            --gradient-end: #06B6D4;
+            /* Legacy aliases for compatibility */
+            --cvs-red: #8B5CF6;
+            --cvs-red-dark: #7C3AED;
+            --cvs-blue: #8B5CF6;
+            --cvs-blue-dark: #7C3AED;
+            --cvs-green: #06B6D4;
+            --cvs-green-light: #CFFAFE;
             --background: #FAFAFA;
             --foreground: #1A1A1A;
             --card: #FFFFFF;
@@ -67,10 +75,10 @@
 
         @keyframes pulse {
             0%, 100% {
-                box-shadow: 0 0 0 0 rgba(0, 102, 204, 0.4);
+                box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4);
             }
             50% {
-                box-shadow: 0 0 0 15px rgba(0, 102, 204, 0);
+                box-shadow: 0 0 0 15px rgba(139, 92, 246, 0);
             }
         }
 
@@ -192,8 +200,8 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: rgba(204, 0, 0, 0.1);
-            color: var(--cvs-red);
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+            color: var(--primary);
             padding: 0.5rem 1rem;
             border-radius: 9999px;
             font-size: 0.875rem;
@@ -211,7 +219,7 @@
         }
 
         .hero h1 span {
-            background: linear-gradient(135deg, var(--cvs-blue) 0%, #0099FF 100%);
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -231,7 +239,7 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--cvs-blue) 0%, #0088EE 100%);
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
             color: white;
             padding: 1rem 2rem;
             border-radius: 9999px;
@@ -244,7 +252,7 @@
             transition: all 0.3s;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
             position: relative;
             overflow: hidden;
         }
@@ -265,9 +273,9 @@
         }
 
         .btn-primary:hover {
-            background: linear-gradient(135deg, var(--cvs-blue-dark) 0%, var(--cvs-blue) 100%);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary) 100%);
             transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(0, 102, 204, 0.35);
+            box-shadow: 0 15px 30px rgba(139, 92, 246, 0.35);
         }
 
         .btn-primary.pulse {
@@ -307,7 +315,7 @@
             position: absolute;
             width: 350px;
             height: 650px;
-            background: radial-gradient(ellipse at center, rgba(0, 102, 204, 0.15) 0%, transparent 70%);
+            background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.2) 0%, rgba(6, 182, 212, 0.1) 50%, transparent 70%);
             border-radius: 50%;
             z-index: -1;
             filter: blur(40px);
@@ -322,7 +330,7 @@
             padding: 8px;
             box-shadow: 
                 0 25px 50px -12px rgba(0, 0, 0, 0.25),
-                0 0 80px rgba(0, 102, 204, 0.15),
+                0 0 80px rgba(139, 92, 246, 0.2),
                 inset 0 0 0 1px rgba(255, 255, 255, 0.1);
         }
 
@@ -462,18 +470,18 @@
 
         .pain-points {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
         }
 
         .pain-point {
             text-align: center;
             padding: 2rem;
-            background: linear-gradient(135deg, #FFF5F5 0%, var(--gray-50) 100%);
+            background: linear-gradient(135deg, #FAF5FF 0%, var(--gray-50) 100%);
             border-radius: 1rem;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(204, 0, 0, 0.05);
+            border: 1px solid rgba(139, 92, 246, 0.1);
         }
 
         .pain-point:hover {
@@ -557,7 +565,7 @@
         /* Beta Benefits Section */
         .benefits-section {
             padding: 6rem 2rem;
-            background: var(--cvs-blue);
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
             color: white;
         }
 
@@ -670,7 +678,7 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--cvs-blue) 0%, #0099FF 100%);
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -957,43 +965,7 @@
                     <h3>Invoice Chaos?</h3>
                     <p>Chasing payments and creating invoices manually eats into your valuable time.</p>
                 </div>
-                <div class="pain-point animate-on-scroll animate-delay-3">
-                    <div class="pain-point-icon">🌙</div>
-                    <h3>Evening Admin Sessions?</h3>
-                    <p>Spending your evenings catching up on paperwork instead of relaxing with family.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Features Section -->
-    <section class="features-section" id="features">
-        <div class="section-container">
-            <div class="section-header animate-on-scroll">
-                <h2>Everything You Need, All in One Place</h2>
-                <p>Purpose-built for equine physiotherapists, by people who understand your workflow.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card animate-on-scroll animate-delay-1">
-                    <div class="feature-icon">📅</div>
-                    <h3>Smart Scheduling</h3>
-                    <p>Manage your appointments with ease, including recurring bookings, travel time calculations, and a beautiful calendar view.</p>
-                </div>
-                <div class="feature-card animate-on-scroll animate-delay-2">
-                    <div class="feature-icon">📋</div>
-                    <h3>Detailed Treatment Records</h3>
-                    <p>Capture comprehensive notes and photos for every session. Build a complete treatment history for each horse.</p>
-                </div>
-                <div class="feature-card animate-on-scroll animate-delay-3">
-                    <div class="feature-icon">💳</div>
-                    <h3>Effortless Invoicing</h3>
-                    <p>Generate professional invoices in seconds. Track payments, send reminders, and get paid faster.</p>
-                </div>
-                <div class="feature-card animate-on-scroll animate-delay-4">
-                    <div class="feature-icon">📊</div>
-                    <h3>At-a-Glance Dashboard</h3>
-                    <p>See your day at a glance with key metrics, upcoming appointments, and outstanding tasks all in one place.</p>
-                </div>
             </div>
         </div>
     </section>
@@ -1008,11 +980,7 @@
             <div class="testimonial-card animate-on-scroll">
                 <div class="testimonial-content">
                     <p class="testimonial-quote">
-                        "For years, I tried to make <strong>Cliniko</strong> work for my equine practice. It's brilliant for human physios, but I was constantly fighting against it — creating workarounds for yard visits, struggling to track multiple horses per client, and the invoicing just never quite fit how we work.
-                        <br><br>
-                        I always dreamed of something <strong>purpose-built for horse physios</strong>. Something that understood that I'm driving between yards, not sitting in a clinic. That my patients have four legs and their owners might have a whole stable of them.
-                        <br><br>
-                        When I saw Equine Physio, I finally felt like <strong>someone actually understood my world</strong>. This is what I've been waiting for."
+                        "I tried making <strong>Cliniko</strong> work for my equine practice, but I was constantly fighting against it — workarounds for yard visits, tracking multiple horses per client. I always dreamed of something <strong>purpose-built for horse physios</strong>. When I saw Equine Physio, I finally felt like <strong>someone actually understood my world</strong>."
                     </p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">AM</div>
@@ -1021,38 +989,6 @@
                             <p>Equine Physiotherapist</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Beta Benefits Section -->
-    <section class="benefits-section">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>Founding Member Benefits</h2>
-                <p>Be among the first to experience the future of equine physio practice management.</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">🎁</div>
-                    <h3>Free Access</h3>
-                    <p>Full access to all features during the early access period</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🛠️</div>
-                    <h3>Shape the Product</h3>
-                    <p>Your feedback directly influences development</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">💰</div>
-                    <h3>Exclusive Discount</h3>
-                    <p>Special pricing when we launch publicly</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🎯</div>
-                    <h3>Priority Support</h3>
-                    <p>Direct access to our team for help</p>
                 </div>
             </div>
         </div>
