@@ -614,6 +614,82 @@
             opacity: 0.8;
         }
 
+        /* Testimonial Section */
+        .testimonial-section {
+            padding: 6rem 2rem;
+            background: var(--gray-50);
+        }
+
+        .testimonial-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 1.5rem;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1.5rem;
+            left: 2rem;
+            font-size: 6rem;
+            font-family: Georgia, serif;
+            color: var(--cvs-blue);
+            opacity: 0.15;
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-quote {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--gray-700);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .testimonial-quote strong {
+            color: var(--cvs-blue);
+            font-style: normal;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--cvs-blue) 0%, #0099FF 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .testimonial-info h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-info p {
+            color: var(--gray-500);
+            font-size: 0.95rem;
+        }
+
         /* CTA Section */
         .cta-section {
             padding: 6rem 2rem;
@@ -917,6 +993,34 @@
                     <div class="feature-icon">📊</div>
                     <h3>At-a-Glance Dashboard</h3>
                     <p>See your day at a glance with key metrics, upcoming appointments, and outstanding tasks all in one place.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="section-container">
+            <div class="section-header animate-on-scroll">
+                <h2>From Someone Who Gets It</h2>
+                <p>Hear from an equine physiotherapist who's been where you are.</p>
+            </div>
+            <div class="testimonial-card animate-on-scroll">
+                <div class="testimonial-content">
+                    <p class="testimonial-quote">
+                        "For years, I tried to make <strong>Cliniko</strong> work for my equine practice. It's brilliant for human physios, but I was constantly fighting against it — creating workarounds for yard visits, struggling to track multiple horses per client, and the invoicing just never quite fit how we work.
+                        <br><br>
+                        I always dreamed of something <strong>purpose-built for horse physios</strong>. Something that understood that I'm driving between yards, not sitting in a clinic. That my patients have four legs and their owners might have a whole stable of them.
+                        <br><br>
+                        When I saw Equine Physio, I finally felt like <strong>someone actually understood my world</strong>. This is what I've been waiting for."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AM</div>
+                        <div class="testimonial-info">
+                            <h4>Annie McAndrew</h4>
+                            <p>Equine Physiotherapist</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
