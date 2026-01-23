@@ -209,6 +209,11 @@
             margin-bottom: 1.5rem;
         }
 
+        /* Hide mobile badge on desktop */
+        .mobile-badge {
+            display: none;
+        }
+
         .hero h1 {
             font-size: 4rem;
             font-weight: 800;
@@ -1269,15 +1274,11 @@
                 line-height: 1.3;
             }
 
-            /* Move badge below phone on mobile */
-            .hero-content {
+            /* Badge positioning on mobile */
+            .mobile-badge {
                 display: flex;
-                flex-direction: column;
-            }
-
-            .beta-badge {
-                order: 10;
-                margin-top: 2rem;
+                order: 3;
+                margin-top: 1.5rem;
             }
         }
     </style>
@@ -1296,10 +1297,6 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <div class="beta-badge">
-                    <span>✨</span>
-                    <span>Help us build something special · Your feedback is invaluable</span>
-                </div>
                 <h1>Stop Juggling <span class="flip-container"><span class="flip-word" id="flip-text">Appointments.</span></span><br><span>Focus on What Matters.</span></h1>
                 <p>The all-in-one app for equine physiotherapists that streamlines your appointments, treatments, and invoicing.</p>
                 <div class="hero-buttons">
@@ -1320,6 +1317,12 @@
                         <video src="demo.mp4" autoplay loop muted playsinline></video>
                     </div>
                 </div>
+            </div>
+            
+            <!-- Badge - shows below phone on mobile -->
+            <div class="beta-badge mobile-badge">
+                <span>✨</span>
+                <span>Help us build something special · Your feedback is invaluable</span>
             </div>
         </div>
     </section>
