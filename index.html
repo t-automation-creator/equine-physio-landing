@@ -1099,10 +1099,24 @@
 
             .hero h1 {
                 font-size: 2rem;
+                text-align: center;
+                line-height: 1.15;
+            }
+
+            .hero h1 br {
+                display: none;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero-content p {
+                text-align: center;
             }
 
             .section-header h2 {
-                font-size: 1.75rem;
+                font-size: 1.5rem;
             }
 
             .benefits-grid {
@@ -1171,16 +1185,17 @@
             }
 
             .challenges-section h2 {
-                font-size: 1.75rem;
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
             }
 
-            .challenge-tags {
+            .challenges-grid {
                 gap: 0.5rem;
             }
 
             .challenge-tag {
-                padding: 0.5rem 0.75rem;
-                font-size: 0.8rem;
+                padding: 0.4rem 0.6rem;
+                font-size: 0.75rem;
             }
 
             .challenges-cta {
@@ -1229,7 +1244,7 @@
             }
 
             .cta-section h2 {
-                font-size: 1.75rem;
+                font-size: 1.5rem;
             }
 
             .cta-section p {
@@ -1264,20 +1279,22 @@
 
             .flip-word {
                 min-width: 140px;
-                text-align: left;
+                text-align: center;
             }
 
             /* Restructure headline for mobile */
             .hero h1 {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                text-align: left;
-                line-height: 1.2;
+                display: block;
+                text-align: center;
+                line-height: 1.15;
             }
 
-            .hero h1 span {
-                display: block;
+            .hero h1 br {
+                display: none;
+            }
+
+            .flip-container {
+                display: inline;
             }
 
             /* Badge positioning on mobile */
@@ -1305,7 +1322,19 @@
             }
 
             .features-header h2 {
-                font-size: 1.75rem;
+                font-size: 1.5rem;
+            }
+
+            .feature-card {
+                padding: 1rem;
+            }
+
+            .feature-card h3 {
+                font-size: 0.9rem;
+            }
+
+            .feature-card p {
+                font-size: 0.75rem;
             }
         }
 
