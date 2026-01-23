@@ -1271,8 +1271,13 @@
             .hero h1 {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
-                line-height: 1.3;
+                align-items: flex-start;
+                text-align: left;
+                line-height: 1.2;
+            }
+
+            .hero h1 span {
+                display: block;
             }
 
             /* Badge positioning on mobile */
@@ -1283,12 +1288,16 @@
             }
 
             .flagship-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
                 gap: 0.75rem;
             }
 
             .coming-soon-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-section {
+                padding: 2rem 1rem;
             }
 
             .coming-soon-section {
@@ -1302,6 +1311,10 @@
 
         @media (max-width: 480px) {
             .flagship-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .coming-soon-grid {
                 grid-template-columns: 1fr;
             }
         }
