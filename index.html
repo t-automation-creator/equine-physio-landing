@@ -1282,19 +1282,30 @@
                 text-align: center;
             }
 
-            /* Restructure headline for mobile */
+            /* Restructure headline for mobile - 3 lines */
             .hero h1 {
-                display: block;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 text-align: center;
-                line-height: 1.15;
+                line-height: 1.2;
+                gap: 0.25rem;
+            }
+
+            .hero-line-1 {
+                display: block;
+            }
+
+            .flip-container {
+                display: block;
+            }
+
+            .hero-line-3 {
+                display: block;
             }
 
             .hero h1 br {
                 display: none;
-            }
-
-            .flip-container {
-                display: inline;
             }
 
             /* Badge positioning on mobile */
@@ -1325,16 +1336,34 @@
                 font-size: 1.5rem;
             }
 
+            /* Mobile feature cards - horizontal layout */
             .feature-card {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 0.75rem;
                 padding: 1rem;
             }
 
+            .feature-icon {
+                flex-shrink: 0;
+                width: 36px;
+                height: 36px;
+                margin-bottom: 0;
+            }
+
+            .feature-content {
+                flex: 1;
+            }
+
             .feature-card h3 {
-                font-size: 0.9rem;
+                font-size: 0.95rem;
+                margin-bottom: 0.25rem;
             }
 
             .feature-card p {
-                font-size: 0.75rem;
+                font-size: 0.8rem;
+                line-height: 1.4;
             }
         }
 
@@ -1552,7 +1581,7 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Stop Juggling <span class="flip-container"><span class="flip-word" id="flip-text">Appointments.</span></span><br><span>Focus on What Matters.</span></h1>
+                <h1><span class="hero-line-1">Stop Juggling</span> <span class="flip-container"><span class="flip-word" id="flip-text">Appointments.</span></span><br><span class="hero-line-3">Focus on What Matters.</span></h1>
                 <p>The all-in-one app for equine physiotherapists that streamlines your appointments, treatments, and invoicing.</p>
                 <div class="hero-buttons">
                     <button class="btn-primary pulse" onclick="openModal()">
@@ -1634,48 +1663,60 @@
                     <div class="feature-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
                     </div>
-                    <h3>Dashboard</h3>
-                    <p>Daily schedule, metrics, and overdue items at a glance.</p>
+                    <div class="feature-content">
+                        <h3>Dashboard</h3>
+                        <p>Daily schedule, metrics, and overdue items at a glance.</p>
+                    </div>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     </div>
-                    <h3>Clients & Horses</h3>
-                    <p>Store owner details, horse profiles, and treatment history.</p>
+                    <div class="feature-content">
+                        <h3>Clients & Horses</h3>
+                        <p>Store owner details, horse profiles, and treatment history.</p>
+                    </div>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                     </div>
-                    <h3>Appointments</h3>
-                    <p>Book visits, track status, and calculate travel time.</p>
+                    <div class="feature-content">
+                        <h3>Appointments</h3>
+                        <p>Book visits, track status, and calculate travel time.</p>
+                    </div>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
                     </div>
-                    <h3>Treatment Notes</h3>
-                    <p>Record findings and track progress for each horse.</p>
+                    <div class="feature-content">
+                        <h3>Treatment Notes</h3>
+                        <p>Record findings and track progress for each horse.</p>
+                    </div>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                     </div>
-                    <h3>Invoicing</h3>
-                    <p>Generate invoices, export PDFs, and log payments.</p>
+                    <div class="feature-content">
+                        <h3>Invoicing</h3>
+                        <p>Generate invoices, export PDFs, and log payments.</p>
+                    </div>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
                     </div>
-                    <h3>Mobile Ready</h3>
-                    <p>Works on any device, designed for use in the field.</p>
+                    <div class="feature-content">
+                        <h3>Mobile Ready</h3>
+                        <p>Works on any device, designed for use in the field.</p>
+                    </div>
                 </div>
             </div>
 
