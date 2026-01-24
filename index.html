@@ -305,7 +305,7 @@
             max-width: 500px;
         }
 
-        /* Practitioner Type Flip Animation */
+        /* Practitioner Type Slide Animation */
         .practitioner-flip-container {
             display: inline-block;
             position: relative;
@@ -313,8 +313,9 @@
             padding: 0.15rem 0.75rem;
             border-radius: 9999px;
             border: 1px solid rgba(139, 92, 246, 0.3);
-            min-width: 180px;
+            width: 180px;
             text-align: center;
+            overflow: hidden;
         }
 
         .hero-subtext {
@@ -335,12 +336,34 @@
             color: #1a1a1a;
         }
 
-        .practitioner-flip-word.flip-out {
-            animation: flipOut 0.3s ease-in forwards;
+        .practitioner-flip-word.slide-out {
+            animation: slideOutLeft 0.4s ease-in forwards;
         }
 
-        .practitioner-flip-word.flip-in {
-            animation: flipIn 0.3s ease-out forwards;
+        .practitioner-flip-word.slide-in {
+            animation: slideInRight 0.4s ease-out forwards;
+        }
+
+        @keyframes slideOutLeft {
+            0% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+        }
+
+        @keyframes slideInRight {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
 
         .hero-buttons {
@@ -2238,30 +2261,30 @@
         // Start the flip animation cycle
         setInterval(flipToNextWord, 2000);
 
-        // Practitioner type flip animation
+        // Practitioner type slide animation
         const practitionerTypes = ['veterinarians', 'dentists', 'physiotherapists', 'chiropractors', 'osteopaths', 'sports therapists', 'massage therapists', 'farriers', 'podiatrists', 'acupuncturists', 'hydrotherapists', 'laser therapists'];
         let practitionerIndex = 0;
         const practitionerFlipText = document.getElementById('practitioner-flip-text');
 
-        function flipToPractitioner() {
-            practitionerFlipText.classList.add('flip-out');
+        function slideToPractitioner() {
+            practitionerFlipText.classList.add('slide-out');
             
             setTimeout(() => {
                 practitionerIndex = (practitionerIndex + 1) % practitionerTypes.length;
                 practitionerFlipText.textContent = practitionerTypes[practitionerIndex];
                 
-                practitionerFlipText.classList.remove('flip-out');
-                practitionerFlipText.classList.add('flip-in');
+                practitionerFlipText.classList.remove('slide-out');
+                practitionerFlipText.classList.add('slide-in');
                 
                 setTimeout(() => {
-                    practitionerFlipText.classList.remove('flip-in');
-                }, 300);
-            }, 300);
+                    practitionerFlipText.classList.remove('slide-in');
+                }, 400);
+            }, 400);
         }
 
-        // Start practitioner flip animation (offset from main flip)
+        // Start practitioner slide animation (offset from main flip)
         setTimeout(() => {
-            setInterval(flipToPractitioner, 2500);
+            setInterval(slideToPractitioner, 2500);
         }, 1000);
     </script>
 <script src="https://cdn.tinystats.net/scripts/capi.js" async></script>
