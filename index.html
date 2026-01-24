@@ -305,38 +305,48 @@
             max-width: 500px;
         }
 
-        /* Practitioner Type Slide Animation */
+/* Practitioner Type Slide Animation */
         .hero-tagline {
-            font-size: 1.25rem;
+            font-size: 1.35rem;
             color: var(--gray-500);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            line-height: 2.2rem;
         }
 
         .hero-subtext {
             font-size: 1.25rem;
             color: var(--gray-500);
+            margin-top: 0.3rem;
             margin-bottom: 2rem;
             max-width: 500px;
         }
 
         .practitioner-flip-container {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             position: relative;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(6, 182, 212, 0.15) 100%);
+            padding: 0.15rem 0.75rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(139, 92, 246, 0.3);
             min-width: 160px;
+            height: 2rem;
             text-align: center;
             overflow: hidden;
             white-space: nowrap;
+            vertical-align: middle;
         }
 
         .practitioner-flip-word {
             display: inline-block;
-            font-weight: 700;
-            color: var(--primary);
-            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            font-size: 1.1rem;
         }
 
         .practitioner-flip-word.slide-out {
