@@ -306,34 +306,32 @@
         }
 
         /* Practitioner Type Slide Animation */
+        .hero-tagline {
+            font-size: 1.25rem;
+            color: var(--gray-500);
+            margin-bottom: 2rem;
+            max-width: 540px;
+            line-height: 1.8;
+        }
+
         .practitioner-flip-container {
             display: inline-block;
             position: relative;
             background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(6, 182, 212, 0.15) 100%);
-            padding: 0.15rem 0.75rem;
+            padding: 0.1rem 0.6rem;
             border-radius: 9999px;
             border: 1px solid rgba(139, 92, 246, 0.3);
-            width: 180px;
+            width: 155px;
             text-align: center;
             overflow: hidden;
-        }
-
-        .hero-subtext {
-            font-size: 1.25rem;
-            color: var(--gray-500);
-            margin-bottom: 2rem;
-            margin-top: 0.5rem;
-            max-width: 500px;
-        }
-
-        .hero p:first-of-type {
-            margin-bottom: 0.25rem;
+            vertical-align: middle;
         }
 
         .practitioner-flip-word {
             display: inline-block;
             font-weight: 600;
             color: #1a1a1a;
+            font-size: 1.1rem;
         }
 
         .practitioner-flip-word.slide-out {
@@ -1842,8 +1840,7 @@
         <div class="hero-container">
             <div class="hero-content">
                 <h1><span class="hero-line-1">Stop Juggling</span> <span class="flip-container"><span class="flip-word" id="flip-text">Appointments.</span></span><br><span class="hero-line-3">Focus on What Matters.</span></h1>
-                <p>The all-in-one app for equine <span class="practitioner-flip-container"><span class="practitioner-flip-word" id="practitioner-flip-text">veterinarians</span></span></p>
-                <p class="hero-subtext">Streamline your appointments, treatments, and invoicing.</p>
+                <p class="hero-tagline">The all-in-one app for equine <span class="practitioner-flip-container"><span class="practitioner-flip-word" id="practitioner-flip-text">veterinarians</span></span> that streamlines your appointments, treatments, and invoicing.</p>
                 <div class="hero-buttons">
                     <button class="btn-primary pulse" onclick="openModal()">
                         <span>Get Early Access</span>
