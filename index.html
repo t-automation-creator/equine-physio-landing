@@ -345,36 +345,19 @@
 
         .flipped-hero .hero-line-2 {
             display: block;
+        }
+
+        .flipped-hero .hero-line-2 > span:first-child {
             background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .practitioner-type-row {
-            font-size: 4rem;
-            font-weight: 800;
-            line-height: 1.05;
-            margin-top: 0;
-            height: 4.2rem;
-            overflow: hidden;
-        }
-
-        .practitioner-type-large {
-            display: inline;
-            font-size: inherit;
-            font-weight: 400;
-            color: #000000 !important;
-            text-transform: capitalize;
-            background: none !important;
-            -webkit-background-clip: unset !important;
-            -webkit-text-fill-color: #000000 !important;
-            background-clip: unset !important;
-            letter-spacing: -0.02em;
-        }
-
         .practitioner-type-inline {
             display: inline-block;
+            min-width: 320px;
+            text-align: left;
             font-size: inherit;
             font-weight: 400;
             color: #000000 !important;
@@ -1605,16 +1588,10 @@
                 display: block;
             }
 
-            .practitioner-type-row {
-                font-size: 2rem;
-                text-align: center;
-                height: 2.2rem;
-                overflow: hidden;
-            }
-
-            .practitioner-type-large,
             .practitioner-type-inline {
-                display: inline;
+                display: inline-block;
+                min-width: 180px;
+                text-align: left;
                 font-size: inherit;
             }
 
@@ -2001,7 +1978,7 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="flipped-hero"><span class="hero-line-1">The All-In-One App For</span><span class="hero-line-2">Equine</span></h1><div class="practitioner-type-row"><span class="practitioner-type-inline" id="practitioner-flip-text">Physiotherapists</span></div>
+                <h1 class="flipped-hero"><span class="hero-line-1">The All-In-One App For</span><span class="hero-line-2"><span>Equine</span> <span class="practitioner-type-inline" id="practitioner-flip-text">Physiotherapists</span></span></h1>
                 <p class="hero-subtext-flipped">Stop juggling appointments, invoicing, and client records. Focus on what matters.</p>
                 <div class="hero-buttons">
                     <button class="btn-primary pulse" onclick="openModal()">
