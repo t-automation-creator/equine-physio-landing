@@ -344,10 +344,14 @@
         }
 
         .flipped-hero .hero-line-2 {
-            display: block;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: baseline;
+            gap: 0.3em;
         }
 
         .flipped-hero .hero-line-2 > span:first-child {
+            flex-shrink: 0;
             background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -355,9 +359,9 @@
         }
 
         .practitioner-type-inline {
-            display: inline-block;
-            min-width: 320px;
-            text-align: left;
+            display: block;
+            width: 450px;
+            flex-shrink: 0;
             font-size: inherit;
             font-weight: 400;
             color: #000000 !important;
@@ -1575,7 +1579,7 @@
 
             /* Flipped hero mobile styles */
             .flipped-hero {
-                font-size: 2rem;
+                font-size: 1.75rem;
                 text-align: center;
                 line-height: 1.1;
             }
@@ -1585,12 +1589,17 @@
             }
 
             .flipped-hero .hero-line-2 {
-                display: block;
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: baseline;
+                gap: 0.2em;
             }
 
             .practitioner-type-inline {
-                display: inline-block;
-                min-width: 180px;
+                display: block;
+                width: 220px;
+                flex-shrink: 0;
                 text-align: left;
                 font-size: inherit;
             }
