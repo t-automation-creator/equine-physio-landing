@@ -345,17 +345,14 @@
 
         .flipped-hero .hero-line-2 {
             display: block;
-        }
-
-        .flipped-hero .equine-word {
             background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .practitioner-type-inline {
-            display: inline-block;
+        .flipped-hero .hero-line-3 {
+            display: block;
             font-size: inherit;
             font-weight: 400;
             color: #000000 !important;
@@ -368,12 +365,14 @@
         }
 
         .practitioner-type-large.slide-out,
-        .practitioner-type-inline.slide-out {
+        .practitioner-type-inline.slide-out,
+        .hero-line-3.slide-out {
             animation: slideOutLeft 0.4s ease-in forwards;
         }
 
         .practitioner-type-large.slide-in,
-        .practitioner-type-inline.slide-in {
+        .practitioner-type-inline.slide-in,
+        .hero-line-3.slide-in {
             animation: slideInRight 0.4s ease-out forwards;
         }
 
@@ -1575,7 +1574,7 @@
             /* Flipped hero mobile styles */
             .flipped-hero {
                 font-size: 1.75rem;
-                text-align: left;
+                text-align: center;
                 line-height: 1.1;
             }
 
@@ -1587,15 +1586,13 @@
                 display: block;
             }
 
-            .practitioner-type-inline {
-                display: inline-block;
-                font-size: inherit;
-                white-space: nowrap;
+            .flipped-hero .hero-line-3 {
+                display: block;
             }
 
             .hero-subtext-flipped {
                 font-size: 1rem;
-                text-align: left;
+                text-align: center;
                 margin: 1rem 0 1.5rem;
                 max-width: 100%;
             }
@@ -1976,7 +1973,7 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="flipped-hero"><span class="hero-line-1">The All-In-One App For</span><span class="hero-line-2"><span class="equine-word">Equine</span> <span class="practitioner-type-inline" id="practitioner-flip-text">Physiotherapists</span></span></h1>
+                <h1 class="flipped-hero"><span class="hero-line-1">The All-In-One App For</span><span class="hero-line-2">Equine</span><span class="hero-line-3" id="practitioner-flip-text">Physiotherapists</span></h1>
                 <p class="hero-subtext-flipped">Stop juggling appointments, invoicing, and client records. Focus on what matters.</p>
                 <div class="hero-buttons">
                     <button class="btn-primary pulse" onclick="openModal()">
