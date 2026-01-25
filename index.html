@@ -344,17 +344,18 @@
         }
 
         .flipped-hero .hero-line-2 {
-            display: flex;
-            flex-wrap: nowrap;
-            align-items: baseline;
-            gap: 0.25em;
-        }
-
-        .flipped-hero .equine-word {
+            display: block;
             background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        .practitioner-type-row {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.05;
+            margin-top: 0;
         }
 
         .practitioner-type-large {
@@ -372,7 +373,7 @@
 
         .practitioner-type-inline {
             display: inline-block;
-            min-width: 7em;
+            font-size: inherit;
             font-weight: 400;
             color: #000000 !important;
             text-transform: capitalize;
@@ -1599,13 +1600,16 @@
             }
 
             .flipped-hero .hero-line-2 {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.25em;
+                display: block;
             }
 
-            .practitioner-type-large {
+            .practitioner-type-row {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .practitioner-type-large,
+            .practitioner-type-inline {
                 display: inline;
                 font-size: inherit;
             }
@@ -1993,7 +1997,7 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="flipped-hero"><span class="hero-line-1">The All-In-One App For</span><span class="hero-line-2"><span class="equine-word">Equine</span> <span class="practitioner-type-inline" id="practitioner-flip-text">Physiotherapists</span></span></h1>
+                <h1 class="flipped-hero"><span class="hero-line-1">The All-In-One App For</span><span class="hero-line-2">Equine</span></h1><div class="practitioner-type-row"><span class="practitioner-type-inline" id="practitioner-flip-text">Physiotherapists</span></div>
                 <p class="hero-subtext-flipped">Stop juggling appointments, invoicing, and client records. Focus on what matters.</p>
                 <div class="hero-buttons">
                     <button class="btn-primary pulse" onclick="openModal()">
