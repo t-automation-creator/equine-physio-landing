@@ -344,14 +344,10 @@
         }
 
         .flipped-hero .hero-line-2 {
-            display: flex;
-            flex-wrap: nowrap;
-            align-items: baseline;
-            gap: 0.3em;
+            display: block;
         }
 
-        .flipped-hero .hero-line-2 > span:first-child {
-            flex-shrink: 0;
+        .flipped-hero .equine-word {
             background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -359,9 +355,7 @@
         }
 
         .practitioner-type-inline {
-            display: block;
-            width: auto;
-            flex-shrink: 0;
+            display: inline-block;
             font-size: inherit;
             font-weight: 400;
             color: #000000 !important;
@@ -1581,7 +1575,7 @@
             /* Flipped hero mobile styles */
             .flipped-hero {
                 font-size: 1.75rem;
-                text-align: center;
+                text-align: left;
                 line-height: 1.1;
             }
 
@@ -1590,27 +1584,20 @@
             }
 
             .flipped-hero .hero-line-2 {
-                display: flex;
-                flex-wrap: nowrap;
-                justify-content: center;
-                align-items: baseline;
-                gap: 0.2em;
+                display: block;
             }
 
             .practitioner-type-inline {
-                display: block;
-                width: auto;
-                flex-shrink: 0;
-                text-align: left;
+                display: inline-block;
                 font-size: inherit;
                 white-space: nowrap;
             }
 
             .hero-subtext-flipped {
                 font-size: 1rem;
-                text-align: center;
-                margin: 1rem auto 1.5rem;
-                max-width: 300px;
+                text-align: left;
+                margin: 1rem 0 1.5rem;
+                max-width: 100%;
             }
 
             .section-header h2 {
@@ -1989,7 +1976,7 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="flipped-hero"><span class="hero-line-1">The All-In-One App For</span><span class="hero-line-2"><span>Equine</span> <span class="practitioner-type-inline" id="practitioner-flip-text">Physiotherapists</span></span></h1>
+                <h1 class="flipped-hero"><span class="hero-line-1">The All-In-One App For</span><span class="hero-line-2"><span class="equine-word">Equine</span> <span class="practitioner-type-inline" id="practitioner-flip-text">Physiotherapists</span></span></h1>
                 <p class="hero-subtext-flipped">Stop juggling appointments, invoicing, and client records. Focus on what matters.</p>
                 <div class="hero-buttons">
                     <button class="btn-primary pulse" onclick="openModal()">
