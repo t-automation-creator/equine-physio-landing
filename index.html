@@ -325,6 +325,54 @@
             max-width: 500px;
         }
 
+        /* Flipped Hero Styles */
+        .flipped-hero {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            color: var(--gray-900);
+            letter-spacing: -0.02em;
+        }
+
+        .flipped-hero .hero-line-1 {
+            display: block;
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .practitioner-type-large {
+            display: block;
+            font-size: 4rem;
+            font-weight: 400;
+            color: #000000 !important;
+            text-transform: capitalize;
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            -webkit-text-fill-color: #000000 !important;
+            background-clip: unset !important;
+            letter-spacing: -0.02em;
+        }
+
+        .practitioner-type-large.slide-out {
+            animation: slideOutLeft 0.4s ease-in forwards;
+        }
+
+        .practitioner-type-large.slide-in {
+            animation: slideInRight 0.4s ease-out forwards;
+        }
+
+        .hero-subtext-flipped {
+            font-size: 1.25rem;
+            color: var(--gray-500);
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 500px;
+            line-height: 1.5;
+        }
+
         .practitioner-flip-container {
             display: inline-flex;
             align-items: center;
@@ -1511,6 +1559,29 @@
                 font-size: 0.95rem;
             }
 
+            /* Flipped hero mobile styles */
+            .flipped-hero {
+                font-size: 2rem;
+                text-align: center;
+                line-height: 1.1;
+            }
+
+            .flipped-hero .hero-line-1 {
+                display: block;
+            }
+
+            .practitioner-type-large {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .hero-subtext-flipped {
+                font-size: 1rem;
+                text-align: center;
+                margin: 1rem auto 1.5rem;
+                max-width: 300px;
+            }
+
             .section-header h2 {
                 font-size: 1.5rem;
             }
@@ -1887,9 +1958,8 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1><span class="hero-line-1">Stop Juggling</span> <span class="flip-container"><span class="flip-word" id="flip-text">Appointments.</span></span><br><span class="hero-line-3">Focus on What Matters.</span></h1>
-                <p class="hero-tagline">The all-in-one app for equine <span class="practitioner-flip-container"><span class="practitioner-flip-word" id="practitioner-flip-text">veterinarians</span></span></p>
-                <p class="hero-subtext">Streamline your appointments, treatments, and invoicing.</p>
+                <h1 class="flipped-hero"><span class="hero-line-1">The All-In-One App For Equine</span><span class="practitioner-type-large" id="practitioner-flip-text">Physiotherapists</span></h1>
+                <p class="hero-subtext-flipped">Stop juggling appointments, invoicing, and client records. Focus on what matters.</p>
                 <div class="hero-buttons">
                     <button class="btn-primary pulse" onclick="openModal()">
                         <span>Get Early Access</span>
@@ -2306,6 +2376,7 @@
         const practitionerFlipText = document.getElementById('practitioner-flip-text');
 
         function slideToPractitioner() {
+            // Use the large variant class for the flipped hero
             practitionerFlipText.classList.add('slide-out');
             
             setTimeout(() => {
