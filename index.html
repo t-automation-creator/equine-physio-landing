@@ -355,7 +355,7 @@
         }
 
         .flipped-hero .hero-line-3 {
-            display: block;
+            display: inline-block;
             font-size: inherit;
             font-weight: 400;
             color: #000000 !important;
@@ -365,6 +365,9 @@
             -webkit-text-fill-color: #000000 !important;
             background-clip: unset !important;
             white-space: nowrap;
+            overflow: hidden;
+            vertical-align: bottom;
+            height: 1.2em;
         }
 
         .practitioner-type-large.slide-out,
@@ -423,22 +426,22 @@
 
         @keyframes slideOutLeft {
             0% {
-                transform: translateX(0);
+                transform: translateY(0);
                 opacity: 1;
             }
             100% {
-                transform: translateX(-100%);
+                transform: translateY(-100%);
                 opacity: 0;
             }
         }
 
         @keyframes slideInRight {
             0% {
-                transform: translateX(100%);
+                transform: translateY(100%);
                 opacity: 0;
             }
             100% {
-                transform: translateX(0);
+                transform: translateY(0);
                 opacity: 1;
             }
         }
