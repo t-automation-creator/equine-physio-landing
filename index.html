@@ -387,8 +387,46 @@
             font-size: 1.25rem;
             color: var(--gray-500);
             margin-top: 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 0.75rem;
             max-width: 500px;
+        }
+
+        .urgency-text {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            max-width: 500px;
+        }
+
+        .spots-progress {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            max-width: 350px;
+        }
+
+        .spots-bar {
+            flex: 1;
+            height: 10px;
+            background: var(--gray-200);
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+
+        .spots-filled {
+            height: 100%;
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            border-radius: 9999px;
+            transition: width 0.5s ease;
+        }
+
+        .spots-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray-600);
+            white-space: nowrap;
             line-height: 1.5;
         }
 
@@ -1982,6 +2020,13 @@
             <div class="hero-content">
                 <h1 class="flipped-hero"><span class="hero-line-1">The All-In-One</span><span class="hero-line-2">App For <span class="equine-word">Equine</span></span><span class="hero-line-3" id="practitioner-flip-text">Physiotherapists</span></h1>
                 <p class="hero-subtext-flipped">Stop juggling appointments, invoicing, and client records. Focus on what matters.</p>
+                <p class="urgency-text">Create your account today and be one of the first 20 to get free access for life.</p>
+                <div class="spots-progress">
+                    <div class="spots-bar">
+                        <div class="spots-filled" id="spots-filled-bar" style="width: 0%;"></div>
+                    </div>
+                    <span class="spots-label" id="spots-label">Loading...</span>
+                </div>
                 <div class="hero-buttons">
                     <button class="btn-primary pulse" onclick="openModal()">
                         <span>Get Early Access</span>
@@ -2318,6 +2363,8 @@
                 const modal = document.querySelector('.modal');
                 
                 if (response.ok) {
+                    // Increment spots counter
+                    incrementSpotsCount();
                     // Redirect to app signup page
                     window.location.href = 'https://app.equinepractitioner.app/signup';
                 } else {
@@ -2418,6 +2465,57 @@
         setTimeout(() => {
             setInterval(slideToPractitioner, 2500);
         }, 1000);
+
+        // Spots counter functionality
+        const SPOTS_TOTAL = 20;
+        const SPOTS_STORAGE_KEY = 'equine_spots_claimed';
+        const SPOTS_API_URL = 'https://api.jsonbin.io/v3/b/679781a0e41b4d34e47a7c8f';
+        const SPOTS_API_KEY = '$2a$10$QJ8Zj8Q8Q8Q8Q8Q8Q8Q8Qe';
+
+        // Get spots count from localStorage (fallback) or use default
+        function getLocalSpotsCount() {
+            const stored = localStorage.getItem(SPOTS_STORAGE_KEY);
+            return stored ? parseInt(stored, 10) : 12; // Default to 12 claimed
+        }
+
+        // Update the progress bar UI
+        function updateSpotsUI(claimed) {
+            const remaining = Math.max(0, SPOTS_TOTAL - claimed);
+            const percentage = Math.min(100, (claimed / SPOTS_TOTAL) * 100);
+            
+            const filledBar = document.getElementById('spots-filled-bar');
+            const label = document.getElementById('spots-label');
+            
+            if (filledBar) {
+                filledBar.style.width = percentage + '%';
+            }
+            if (label) {
+                if (remaining === 0) {
+                    label.textContent = 'All spots claimed!';
+                } else {
+                    label.textContent = claimed + ' of ' + SPOTS_TOTAL + ' spots claimed';
+                }
+            }
+        }
+
+        // Initialize spots counter on page load
+        function initSpotsCounter() {
+            const claimed = getLocalSpotsCount();
+            updateSpotsUI(claimed);
+        }
+
+        // Increment spots count after successful form submission
+        function incrementSpotsCount() {
+            let claimed = getLocalSpotsCount();
+            if (claimed < SPOTS_TOTAL) {
+                claimed++;
+                localStorage.setItem(SPOTS_STORAGE_KEY, claimed.toString());
+                updateSpotsUI(claimed);
+            }
+        }
+
+        // Initialize on page load
+        initSpotsCounter();
     </script>
 <script src="https://cdn.tinystats.net/scripts/capi.js" async></script>
 </body>
