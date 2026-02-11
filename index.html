@@ -158,23 +158,22 @@
 
         .logo {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
             text-decoration: none;
-            gap: 0.15rem;
+            gap: 0.5rem;
         }
 
-        .logo-prefix {
-            font-size: 0.7rem;
-            color: var(--gray-500);
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .logo-horse {
+            width: 32px;
+            height: 32px;
         }
 
-        .logo-img {
-            height: 28px;
-            width: auto;
+        .logo-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            letter-spacing: -0.01em;
         }
 
         .nav-cta {
@@ -775,6 +774,116 @@
             line-height: 1.6;
         }
 
+        /* Founders Section */
+        .founders-section {
+            padding: 6rem 2rem;
+            background: #FFFFFF;
+            text-align: center;
+        }
+
+        .founders-section h2 {
+            color: var(--gray-900);
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .founders-section > p {
+            color: var(--muted);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .founders-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .founder-card {
+            flex: 1;
+            min-width: 250px;
+            max-width: 320px;
+            text-align: center;
+        }
+
+        .founder-avatar {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            margin: 0 auto 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 3px solid var(--gray-200);
+        }
+
+        .founder-avatar svg {
+            width: 48px;
+            height: 48px;
+            stroke: white;
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .founder-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .founder-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.25rem;
+        }
+
+        .founder-card .founder-role {
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .founder-card .founder-bio {
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .founder-instagram {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .founder-instagram:hover {
+            color: var(--primary-dark);
+        }
+
+        .founder-instagram svg {
+            width: 16px;
+            height: 16px;
+        }
+
         /* Challenges Section */
         .challenges-section {
             padding: 6rem 2rem;
@@ -944,71 +1053,72 @@
             opacity: 0.8;
         }
 
-        /* Testimonial Section */
+        /* Testimonial Section - Split Layout */
         .testimonial-section {
             position: relative;
             padding: 0;
             background: var(--gray-900);
+            display: flex;
+            min-height: 480px;
+            overflow: hidden;
+        }
+
+        .testimonial-quote-panel {
+            flex: 1 1 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 1rem 4rem 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonial-quote-panel::before {
+            content: "\201C";
+            position: absolute;
+            top: 1.5rem;
+            left: 2rem;
+            font-size: 8rem;
+            line-height: 1;
+            font-family: Georgia, serif;
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0.3;
+        }
+
+        .testimonial-image-panel {
+            flex: 1 1 60%;
+            position: relative;
+            min-height: 480px;
         }
 
         .testimonial-hero-image {
             width: 100%;
-            height: 500px;
+            height: 100%;
             object-fit: cover;
+            object-position: center center;
             display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
-        .testimonial-overlay {
+        /* Fade edges into dark background on all sides */
+        .testimonial-image-panel::before {
+            content: "";
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 40%, transparent 70%);
-            padding: 2rem 2rem 1.5rem;
-        }
-
-        .testimonial-section .section-container {
-            position: relative;
+            bottom: 0;
             z-index: 1;
-        }
-
-        .testimonial-section .section-header {
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-section .section-header h2 {
-            font-size: 1.5rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .testimonial-section .section-header p {
-            font-size: 0.875rem;
-        }
-
-        .testimonial-section .section-header h2 {
-            color: white;
-        }
-
-        .testimonial-section .section-header p {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .testimonial-card {
-            max-width: 700px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 1rem;
-            padding: 1.25rem 1.5rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            position: relative;
-            backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-        }
-
-        .testimonial-card::before {
-            display: none;
+            background:
+                linear-gradient(to right, var(--gray-900) 0%, transparent 25%),
+                linear-gradient(to left, var(--gray-900) 0%, transparent 10%),
+                linear-gradient(to bottom, var(--gray-900) 0%, transparent 15%),
+                linear-gradient(to top, var(--gray-900) 0%, transparent 15%);
         }
 
         .testimonial-content {
@@ -1017,53 +1127,32 @@
         }
 
         .testimonial-quote {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: var(--gray-700);
-            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
             font-style: italic;
         }
 
-        .testimonial-signature {
-            font-size: 0.875rem;
-            color: var(--gray-600);
-            font-weight: 500;
-        }
-
         .testimonial-quote strong {
-            color: var(--cvs-blue);
+            color: var(--gradient-end);
             font-style: normal;
         }
 
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .testimonial-avatar {
-            width: 50px;
-            height: 50px;
-            min-width: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
+        .testimonial-signature {
             font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 500;
         }
 
-        .testimonial-info h4 {
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .testimonial-info p {
-            color: var(--gray-500);
-            font-size: 0.95rem;
+        .testimonial-signature::before {
+            content: "";
+            display: inline-block;
+            width: 2rem;
+            height: 2px;
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            vertical-align: middle;
+            margin-right: 0.75rem;
         }
 
         /* CTA Section */
@@ -1313,7 +1402,7 @@
         }
 
         .features-container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
@@ -1337,7 +1426,7 @@
 
         .flagship-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
             margin-bottom: 2rem;
         }
@@ -1495,6 +1584,362 @@
             line-height: 1.4;
         }
 
+        /* Pricing Section */
+        .pricing-subtitle {
+            font-size: 1.125rem;
+            color: var(--gray-500);
+            margin-bottom: 2rem;
+        }
+
+        .billing-toggle {
+            display: inline-flex;
+            background: var(--gray-100);
+            border-radius: 9999px;
+            padding: 4px;
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--gray-200);
+        }
+
+        .billing-btn {
+            padding: 0.6rem 1.5rem;
+            border-radius: 9999px;
+            border: none;
+            background: transparent;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gray-500);
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .billing-btn.active {
+            background: white;
+            color: var(--gray-900);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .save-badge {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #16a34a;
+            background: #dcfce7;
+            padding: 0.15rem 0.5rem;
+            border-radius: 9999px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 960px;
+            margin: 0 auto 2rem;
+            align-items: start;
+            padding-top: 1rem;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 1rem;
+            border: 2px solid var(--gray-200);
+            text-align: left;
+            position: relative;
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 1.5rem 1.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .pricing-card:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .pricing-card.featured {
+            border-color: #16a34a;
+            box-shadow: 0 8px 30px rgba(22, 163, 74, 0.12);
+            transform: scale(1.02);
+            z-index: 1;
+        }
+
+        .pricing-card.featured:hover {
+            box-shadow: 0 12px 35px rgba(22, 163, 74, 0.18);
+        }
+
+        .pricing-card.muted-card {
+            background: var(--gray-50);
+            border-color: var(--gray-200);
+        }
+
+        /* Badge - absolutely positioned, overlapping the card border */
+        .pricing-card-badge {
+            position: absolute;
+            top: -0.75rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.3rem 0.9rem;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+        }
+
+        .free-badge {
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            color: white;
+        }
+
+        .featured-badge {
+            background: #16a34a;
+            color: white;
+        }
+
+        .coming-badge {
+            background: var(--gray-700);
+            color: white;
+        }
+
+        /* Card header area */
+        .pricing-card-header {
+            margin-bottom: 1.25rem;
+        }
+
+        .pricing-card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.25rem;
+        }
+
+        .trial-title {
+            color: var(--primary);
+        }
+
+        .featured-title {
+            color: #16a34a;
+        }
+
+        .pricing-card-desc {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            margin: 0;
+        }
+
+        /* Price display */
+        .pricing-amount-block {
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-amount {
+            display: flex;
+            align-items: baseline;
+            gap: 0.1rem;
+            margin-bottom: 0.15rem;
+        }
+
+        .pricing-currency {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            line-height: 1;
+        }
+
+        .custom-price {
+            font-size: 1.75rem;
+        }
+
+        .pricing-interval {
+            font-size: 1rem;
+            color: var(--gray-500);
+            font-weight: 400;
+        }
+
+        .pricing-period {
+            font-size: 0.8rem;
+            color: #16a34a;
+            font-weight: 500;
+            min-height: 1.2em;
+            margin: 0;
+        }
+
+        .pricing-period-muted {
+            color: var(--gray-400);
+            font-weight: 400;
+        }
+
+        /* Features list */
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+            flex: 1;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            padding: 0.35rem 0;
+            line-height: 1.4;
+        }
+
+        .check-icon {
+            width: 16px;
+            height: 16px;
+            min-width: 16px;
+            stroke: #16a34a;
+            stroke-width: 2.5;
+            fill: none;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .featured-check {
+            stroke: #16a34a;
+        }
+
+        .muted-check {
+            stroke: var(--gray-400);
+        }
+
+        .muted-feature {
+            color: var(--gray-400);
+        }
+
+        /* CTA buttons */
+        .pricing-cta-btn {
+            display: block;
+            width: 100%;
+            padding: 0.85rem;
+            border-radius: 9999px;
+            text-align: center;
+            margin-top: auto;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        .trial-btn {
+            background: var(--gray-100);
+            color: var(--gray-600);
+            border: 1px solid var(--gray-200);
+        }
+
+        .trial-btn:hover {
+            background: var(--gray-200);
+            color: var(--gray-800);
+        }
+
+        .featured-btn {
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+
+        .featured-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+        }
+
+        .practice-btn {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .practice-btn:hover {
+            background: rgba(139, 92, 246, 0.05);
+        }
+
+        .pricing-note {
+            font-size: 0.72rem;
+            color: var(--gray-400);
+            text-align: center;
+            margin-top: 0.75rem;
+            margin-bottom: 0;
+        }
+
+        .pricing-region-note {
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-top: 0.5rem;
+        }
+
+        .pricing-footer-note {
+            font-size: 0.85rem;
+            color: var(--gray-400);
+            margin-top: 0.5rem;
+        }
+
+        /* Trust Strip */
+        .trust-strip-section {
+            padding: 3rem 2rem;
+            background: white;
+        }
+
+        .trust-strip-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1.5rem;
+        }
+
+        .trust-item {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .trust-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+        }
+
+        .trust-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+        }
+
+        .trust-text strong {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+
+        .trust-text span {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+            line-height: 1.3;
+        }
+
         /* Footer */
         footer {
             padding: 2rem;
@@ -1550,6 +1995,24 @@
 
             .features-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .flagship-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto 2rem;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .trust-strip-container {
+                grid-template-columns: repeat(3, 1fr);
             }
 
             .benefits-grid {
@@ -1775,6 +2238,24 @@
                 border-radius: 0.875rem;
             }
 
+            /* Founders section mobile */
+            .founders-section {
+                padding: 3rem 1rem;
+            }
+
+            .founders-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .founders-grid {
+                gap: 2rem;
+            }
+
+            .founder-avatar {
+                width: 200px;
+                height: 200px;
+            }
+
             /* Challenges section mobile */
             .challenges-section {
                 padding: 3rem 1rem;
@@ -1820,17 +2301,40 @@
                 font-size: 0.95rem;
             }
 
-            /* Testimonial mobile */
+            /* Testimonial mobile - stack vertically */
             .testimonial-section {
-                min-height: 400px;
+                flex-direction: column;
+                min-height: auto;
             }
 
-            .testimonial-card {
-                padding: 1rem 1.25rem;
-                margin: 0 1rem;
+            .testimonial-quote-panel {
+                padding: 3rem 2rem 2.5rem 2rem;
+                order: 2;
             }
 
-            .testimonial-card p {
+            .testimonial-quote-panel::before {
+                top: 0.5rem;
+                left: 0.5rem;
+                font-size: 5rem;
+            }
+
+            .testimonial-image-panel {
+                min-height: 300px;
+                order: 1;
+            }
+
+            .testimonial-image-panel::before {
+                background:
+                    linear-gradient(to bottom, var(--gray-900) 0%, transparent 10%),
+                    linear-gradient(to top, var(--gray-900) 0%, transparent 10%);
+            }
+
+            .testimonial-quote {
+                font-size: 1rem;
+                line-height: 1.7;
+            }
+
+            .testimonial-signature {
                 font-size: 0.9rem;
             }
 
@@ -1848,12 +2352,13 @@
             }
 
             /* Nav mobile */
-            .logo-img {
-                height: 24px;
+            .logo-horse {
+                width: 26px;
+                height: 26px;
             }
 
-            .logo-prefix {
-                font-size: 0.6rem;
+            .logo-name {
+                font-size: 0.85rem;
             }
 
             .nav-cta {
@@ -1912,8 +2417,13 @@
             }
 
             .flagship-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
                 gap: 0.75rem;
+            }
+
+            .trust-strip-container {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
             }
 
             .coming-soon-grid {
@@ -2004,6 +2514,11 @@
             .coming-soon-grid {
                 grid-template-columns: 1fr;
             }
+
+            .trust-strip-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
         }
 
 
@@ -2012,11 +2527,11 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <a href="https://lumineerdigital.com" class="logo">
-            <span class="logo-prefix">Brought to you by</span>
-            <img src="lumineer-logo.png" alt="Lumineer Digital" class="logo-img">
+        <a href="https://equinepractitioner.app" class="logo">
+            <img src="horse-logo.png" alt="Equine Practitioner" class="logo-horse">
+            <span class="logo-name">The Equine Practitioner App</span>
         </a>
-        <a href="#" class="nav-cta" onclick="openModal()">Get Early Access</a>
+        <a href="https://app.equinepractitioner.app/signup" class="nav-cta">Sign Up For Free</a>
     </nav>
 
     <!-- Hero Section -->
@@ -2025,18 +2540,11 @@
             <div class="hero-content">
                 <h1 class="flipped-hero"><span class="hero-line-1">The All-In-One</span><span class="hero-line-2">App For <span class="equine-word">Equine</span></span><span class="hero-line-3" id="practitioner-flip-text">Physiotherapists</span></h1>
                 <p class="hero-subtext-flipped">Stop juggling appointments, invoicing, and client records. Focus on what matters.</p>
-                <p class="urgency-text">Create your account today and be one of the first 20 to get free access for life.</p>
-                <div class="spots-progress">
-                    <div class="spots-bar">
-                        <div class="spots-filled" id="spots-filled-bar" style="width: 0%;"></div>
-                    </div>
-                    <span class="spots-label" id="spots-label">Loading...</span>
-                </div>
                 <div class="hero-buttons">
-                    <button class="btn-primary pulse" onclick="openModal()">
-                        <span>Get Early Access</span>
+                    <a href="https://app.equinepractitioner.app/signup" class="btn-primary pulse">
+                        <span>Start 7 Day Trial</span>
                         <span>→</span>
-                    </button>
+                    </a>
                     <a href="#features" class="btn-secondary">
                         <span>See Features</span>
                     </a>
@@ -2063,6 +2571,47 @@
         </div>
     </section>
 
+    <!-- Meet the Founders Section -->
+    <section class="founders-section animate-on-scroll">
+        <h2>Meet the Founders</h2>
+        <p>Built by people who understand equine practice from the inside out.</p>
+        <div class="founders-grid">
+            <div class="founder-card">
+                <div class="founder-avatar">
+                    <img src="annie-headshot.jpg" alt="Annie McAndrew">
+                </div>
+                <h3>Annie McAndrew</h3>
+                <p class="founder-role">CPO</p>
+                <p class="founder-bio">BSc (Hons) Veterinary Physiotherapist<br>FEI permitted Therapist<br>Advanced INDIBA certified Therapist</p>
+                <a href="https://www.instagram.com/annievetphysio/" class="founder-instagram" target="_blank" rel="noopener">
+                    Follow Annie on <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+            </div>
+            <div class="founder-card">
+                <div class="founder-avatar">
+                    <img src="taylor-headshot.jpg" alt="Taylor">
+                </div>
+                <h3>Taylor Deakyne</h3>
+                <p class="founder-role">CEO</p>
+                <p class="founder-bio">Horse lover<br>Tech Enthusiast<br>Stargazer</p>
+                <a href="https://www.instagram.com/taylordeakyne/" class="founder-instagram" target="_blank" rel="noopener">
+                    Follow Taylor on <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+            </div>
+            <div class="founder-card">
+                <div class="founder-avatar">
+                    <img src="nick-headshot.jpg" alt="Nick Rees">
+                </div>
+                <h3>Nick Rees</h3>
+                <p class="founder-role">CTO</p>
+                <p class="founder-bio">Technologist<br>Cook<br>Sun Seeker</p>
+                <a href="https://www.instagram.com/gninja24/" class="founder-instagram" target="_blank" rel="noopener">
+                    Follow Nick on <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Challenges Section -->
     <section class="challenges-section">
         <h2>Help us tackle the biggest challenges for Equine Practitioners</h2>
@@ -2075,7 +2624,7 @@
             <div class="challenge-tag"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> No mobile-friendly tools</div>
             <div class="challenge-tag"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Difficulty reporting</div>
         </div>
-        <p class="challenges-cta">Can you relate to any of these? <a onclick="openModal()">Get involved →</a></p>
+        <p class="challenges-cta">Can you relate to any of these? <a href="https://app.equinepractitioner.app/signup">Get involved →</a></p>
     </section>
 
     <!-- Problem Section -->
@@ -2101,15 +2650,30 @@
         </div>
     </section>
 
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="testimonial-quote-panel">
+            <div class="testimonial-content animate-on-scroll">
+                <p class="testimonial-quote">
+                    "I spent years trying to make generic practice management tools work for my equine business,<strong>endless workarounds</strong> for yard visits, multi-horse households, and on-the-go notes. Nothing was built for how we actually work. So we decided to <strong>build it ourselves</strong>. Equine Practitioner is the app I always wished existed,designed from the ground up by practitioners, for practitioners."
+                </p>
+                <p class="testimonial-signature">Annie McAndrew, Co-Founder &amp; CPO</p>
+            </div>
+        </div>
+        <div class="testimonial-image-panel">
+            <img src="testimonial-hero.jpg" alt="Annie McAndrew treating a horse" class="testimonial-hero-image">
+        </div>
+    </section>
+
     <!-- Features Section -->
     <section class="features-section" id="features">
         <div class="features-container">
             <div class="features-header">
-                <h2>What We're Building for Equine Practitioners</h2>
-                <p>All your practice management in one place.</p>
+                <h2>Everything You Need to Run Your Practice</h2>
+                <p>Built from the ground up for equine practitioners. No workarounds, no compromises.</p>
             </div>
 
-            <!-- Flagship Features -->
+            <!-- Flagship Features - 12 cards -->
             <div class="flagship-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -2117,7 +2681,7 @@
                     </div>
                     <div class="feature-content">
                         <h3>Dashboard</h3>
-                        <p>Daily schedule, metrics, and overdue items at a glance.</p>
+                        <p>Today's schedule, key metrics, overdue items, and a Needs Attention section so nothing slips through.</p>
                     </div>
                 </div>
 
@@ -2127,7 +2691,7 @@
                     </div>
                     <div class="feature-content">
                         <h3>Clients & Horses</h3>
-                        <p>Store owner details, horse profiles, and treatment history.</p>
+                        <p>Owner profiles, horse records, discipline tags, activity logs, and searchable dropdowns. Every detail in one place.</p>
                     </div>
                 </div>
 
@@ -2137,7 +2701,17 @@
                     </div>
                     <div class="feature-content">
                         <h3>Appointments</h3>
-                        <p>Book visits, track status, and calculate travel time.</p>
+                        <p>Book visits with duration slots, track status from upcoming to completed, and choose between yard or client-address callouts.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Smart Travel Time</h3>
+                        <p>Google Maps built in. Automatically calculates travel time between appointments and shows "leave by" times on your schedule.</p>
                     </div>
                 </div>
 
@@ -2147,7 +2721,37 @@
                     </div>
                     <div class="feature-content">
                         <h3>Treatment Notes</h3>
-                        <p>Record findings and track progress for each horse.</p>
+                        <p>SOAP-style clinical records covering subjective, assessment, palpation, treatment, and recommendations. All timestamped and linked to the horse.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Vet Reports</h3>
+                        <p>Generate professional clinical reports for referring vets with your practice branding. Print or share in one tap.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Body Chart</h3>
+                        <p>Mark findings on an anatomical horse diagram with tappable regions. Visual clinical records that speak louder than words.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Photos & Videos</h3>
+                        <p>Capture photos mid-treatment, upload videos and vet documents. Everything filed under the right horse with gallery filtering and sharing.</p>
                     </div>
                 </div>
 
@@ -2157,7 +2761,27 @@
                     </div>
                     <div class="feature-content">
                         <h3>Invoicing</h3>
-                        <p>Generate invoices, export PDFs, and log payments.</p>
+                        <p>Branded invoices with your logo, a built-in service catalog, and editable line items. Email to clients in one tap.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Payments</h3>
+                        <p>Record full or partial payments, track outstanding balances per client, and mark invoices as paid. No more chasing spreadsheets.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Works Worldwide</h3>
+                        <p>Auto-detects your region and currency. Supports GBP, USD, EUR, AUD, NZD, and CAD with local bank detail formats on every invoice.</p>
                     </div>
                 </div>
 
@@ -2166,8 +2790,8 @@
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
                     </div>
                     <div class="feature-content">
-                        <h3>Mobile Ready</h3>
-                        <p>Works on any device, designed for use in the field.</p>
+                        <h3>Mobile First</h3>
+                        <p>Built for life at the yard. Full experience on your phone, tablet, or desktop. Same app, every device.</p>
                     </div>
                 </div>
             </div>
@@ -2209,193 +2833,174 @@
 
                     <div class="coming-soon-card">
                         <div class="coming-soon-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg>
                         </div>
-                        <h4>Stripe Payments</h4>
-                        <p>Accept card payments directly through the app.</p>
+                        <h4>Calendar View</h4>
+                        <p>Visual calendar with drag-and-drop scheduling and collision detection.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonial Section -->
-    <section class="testimonial-section">
-        <img src="testimonial-hero.jpg" alt="Equine physiotherapist working with a horse" class="testimonial-hero-image">
-        <div class="testimonial-overlay">
-            <div class="section-container">
-                <div class="testimonial-card animate-on-scroll">
-                    <div class="testimonial-content">
-                        <p class="testimonial-quote">
-                            "I tried making <strong>Cliniko</strong> work for my equine practice, but I was constantly fighting against it. Workarounds for yard visits, tracking multiple horses per client. I always dreamed of something <strong>purpose-built for equine practitioners</strong>. When I saw Equine Practitioner, I finally felt like <strong>someone actually understood my world</strong>."
-                        </p>
-                        <p class="testimonial-signature">Annie McAndrew, Equine Physiotherapist</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
+    <!-- Pricing Section -->
+    <section class="cta-section" id="pricing">
         <h2>Ready to Simplify Your Practice?</h2>
-        <p>What features would you like to see? What would make your life easier? Help shape the future of equine practice software.</p>
-        <button class="btn-primary" onclick="openModal()">
-            <span>Reserve Your Spot</span>
-            <span>→</span>
-        </button>
+        <p class="pricing-subtitle">Start with a free trial, upgrade when you're ready</p>
+
+        <!-- Monthly / Annual Toggle -->
+        <div class="billing-toggle">
+            <button class="billing-btn active" id="monthly-btn" onclick="setBilling('monthly')">Monthly</button>
+            <button class="billing-btn" id="annual-btn" onclick="setBilling('annual')">Annual <span class="save-badge">Save 2 months</span></button>
+        </div>
+
+        <!-- Pricing Cards -->
+        <div class="pricing-grid">
+            <!-- Free Trial -->
+            <div class="pricing-card">
+                <div class="pricing-card-badge free-badge">7 Days Free</div>
+                <div class="pricing-card-header">
+                    <h3 class="pricing-card-title trial-title">Free Trial</h3>
+                    <p class="pricing-card-desc">Try everything risk-free</p>
+                </div>
+                <div class="pricing-amount-block">
+                    <div class="pricing-amount">
+                        <span class="pricing-price">Free</span>
+                    </div>
+                    <p class="pricing-period pricing-period-muted">for 7 days</p>
+                </div>
+                <ul class="pricing-features">
+                    <li><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Full platform access</li>
+                    <li><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Unlimited clients &amp; horses</li>
+                    <li><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Invoicing &amp; payments</li>
+                    <li><svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> No credit card required</li>
+                </ul>
+                <a href="https://app.equinepractitioner.app/signup" class="pricing-cta-btn trial-btn">Start Free Trial</a>
+            </div>
+
+            <!-- Practitioner (Featured) -->
+            <div class="pricing-card featured">
+                <div class="pricing-card-badge featured-badge">Full Platform</div>
+                <div class="pricing-card-header">
+                    <h3 class="pricing-card-title featured-title">Practitioner</h3>
+                    <p class="pricing-card-desc">Everything you need to run your practice</p>
+                </div>
+                <div class="pricing-amount-block">
+                    <div class="pricing-amount">
+                        <span class="pricing-currency">&pound;</span>
+                        <span class="pricing-price" id="practitioner-price">20</span>
+                        <span class="pricing-interval" id="practitioner-interval">/month</span>
+                    </div>
+                    <p class="pricing-period" id="practitioner-period">&nbsp;</p>
+                </div>
+                <ul class="pricing-features">
+                    <li><svg class="check-icon featured-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Unlimited clients &amp; horses</li>
+                    <li><svg class="check-icon featured-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Appointment scheduling</li>
+                    <li><svg class="check-icon featured-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Clinical notes &amp; reports</li>
+                    <li><svg class="check-icon featured-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Invoicing &amp; payments</li>
+                    <li><svg class="check-icon featured-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Practice branding</li>
+                    <li><svg class="check-icon featured-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Multi-currency support</li>
+                </ul>
+                <a href="https://app.equinepractitioner.app/signup" class="pricing-cta-btn featured-btn">Get Started</a>
+                <p class="pricing-note" id="pricing-note-text">Pricing shown in GBP based on your location</p>
+            </div>
+
+            <!-- Practice (Coming Soon) -->
+            <div class="pricing-card muted-card">
+                <div class="pricing-card-badge coming-badge">Coming Soon</div>
+                <div class="pricing-card-header">
+                    <h3 class="pricing-card-title">Practice</h3>
+                    <p class="pricing-card-desc">Multi-practitioner teams</p>
+                </div>
+                <div class="pricing-amount-block">
+                    <div class="pricing-amount">
+                        <span class="pricing-price custom-price">Custom</span>
+                    </div>
+                    <p class="pricing-period pricing-period-muted">Contact us for a quote</p>
+                </div>
+                <ul class="pricing-features">
+                    <li><svg class="check-icon muted-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span class="muted-feature">Everything in Practitioner</span></li>
+                    <li><svg class="check-icon muted-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span class="muted-feature">Multiple practitioner logins</span></li>
+                    <li><svg class="check-icon muted-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span class="muted-feature">Shared client database</span></li>
+                    <li><svg class="check-icon muted-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span class="muted-feature">Team calendar</span></li>
+                    <li><svg class="check-icon muted-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span class="muted-feature">Practice-wide reporting</span></li>
+                </ul>
+                <a href="mailto:hello@equinepractitioner.app?subject=Practice%20Tier%20Enquiry" class="pricing-cta-btn practice-btn">Register Interest</a>
+            </div>
+        </div>
+
+        <p class="pricing-region-note">Showing prices for <strong id="detected-region">United Kingdom</strong></p>
+        <p class="pricing-footer-note">All plans include free updates and secure data backups</p>
+    </section>
+
+    <!-- Trust Strip Section -->
+    <section class="trust-strip-section">
+        <div class="trust-strip-container">
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div class="trust-text">
+                    <strong>2-Minute Setup</strong>
+                    <span>Guided onboarding with postcode auto-fill</span>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <div class="trust-text">
+                    <strong>7-Day Free Trial</strong>
+                    <span>Full features, no card required</span>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="trust-text">
+                    <strong>GDPR Compliant</strong>
+                    <span>Export or delete your data anytime</span>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                </div>
+                <div class="trust-text">
+                    <strong>Secure Billing</strong>
+                    <span>Stripe-powered, monthly or annual</span>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+                </div>
+                <div class="trust-text">
+                    <strong>Multiple Sign-In</strong>
+                    <span>Google, Apple, Microsoft, or email</span>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                </div>
+                <div class="trust-text">
+                    <strong>Your Data Is Yours</strong>
+                    <span>Isolated, encrypted, backed up on demand</span>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2026 Equine Practitioner. All rights reserved. Made with care for equine practitioners.</p>
+        <p>Brought to you by <a href="https://lumineerdigital.com"><img src="lumineer-logo.png" alt="Lumineer Digital" class="logo-img" style="height: 20px; vertical-align: middle; margin-left: 4px;"></a></p>
+        <p>© 2026 Lumineer Digital. All rights reserved.</p>
     </footer>
 
-    <!-- Modal -->
-    <div class="modal-overlay" id="modal">
-        <div class="modal">
-            <button class="modal-close" onclick="closeModal()">×</button>
-            <h3>Get Early Access</h3>
-            <p>What features would you like to see? What would make your life easier?</p>
-            <form id="beta-form" action="https://formspree.io/f/mqepbpvv" method="POST">
-                <div class="form-group">
-                    <label for="name">Your Name *</label>
-                    <input type="text" id="name" name="name" required placeholder="e.g., Sarah Jones">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required placeholder="you@example.com">
-                </div>
-                <div class="form-group">
-                    <label for="practice">Practice Name (Optional)</label>
-                    <input type="text" id="practice" name="practice" placeholder="e.g., Sarah's Equine Practice">
-                </div>
-                <div class="form-group">
-                    <label>What challenges do you face?</label>
-                    <div class="checkbox-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="stress_areas" value="notes">
-                            <span class="chip-content">
-                                <span class="chip-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                                Client Notes
-                            </span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="stress_areas" value="booking">
-                            <span class="chip-content">
-                                <span class="chip-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                                Scheduling
-                            </span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="stress_areas" value="invoicing">
-                            <span class="chip-content">
-                                <span class="chip-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                                Invoicing
-                            </span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="stress_areas" value="multi_horse">
-                            <span class="chip-content">
-                                <span class="chip-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                                Multi-Horse
-                            </span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="stress_areas" value="yard_visits">
-                            <span class="chip-content">
-                                <span class="chip-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                                Yard Visits
-                            </span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="stress_areas" value="reporting">
-                            <span class="chip-content">
-                                <span class="chip-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                                Reporting
-                            </span>
-                        </label>
-                    </div>
-                    <div class="other-input-group">
-                        <label class="other-label">Other (please specify)</label>
-                        <input type="text" name="other_challenge" class="other-input" placeholder="e.g., Client communication, Travel planning...">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="source">How did you hear about us?</label>
-                    <select id="source" name="source">
-                        <option value="">Select an option</option>
-                        <option value="social">Social Media</option>
-                        <option value="colleague">Colleague Referral</option>
-                        <option value="search">Google Search</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn-primary">Create my account</button>
-            </form>
-        </div>
-    </div>
 
     <script>
-        function openModal() {
-            document.getElementById('modal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            document.getElementById('modal').classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        // Handle form submission with Formspree
-        document.getElementById('beta-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const form = e.target;
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            
-            // Show loading state
-            submitBtn.innerHTML = 'Sending...';
-            submitBtn.disabled = true;
-            
-            try {
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: new FormData(form),
-                    headers: { 'Accept': 'application/json' }
-                });
-                
-                const modal = document.querySelector('.modal');
-                
-                if (response.ok) {
-                    // Increment spots counter
-                    incrementSpotsCount();
-                    // Redirect to app signup page
-                    window.location.href = 'https://app.equinepractitioner.app/signup';
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            } catch (error) {
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                alert('Oops! There was a problem submitting your form. Please try again.');
-            }
-        });
-
-        // Close modal on overlay click
-        document.getElementById('modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
-
-        // Close modal on escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-        });
-
         // Scroll animations using Intersection Observer
         const observerOptions = {
             root: null,
@@ -2471,56 +3076,87 @@
             setInterval(slideToPractitioner, 2500);
         }, 1000);
 
-        // Spots counter functionality
-        const SPOTS_TOTAL = 20;
-        const SPOTS_STORAGE_KEY = 'equine_spots_claimed';
-        const SPOTS_API_URL = 'https://api.jsonbin.io/v3/b/679781a0e41b4d34e47a7c8f';
-        const SPOTS_API_KEY = '$2a$10$QJ8Zj8Q8Q8Q8Q8Q8Q8Q8Qe';
+        // ---- Pricing: Geo-localisation + billing toggle ----
+        const pricingData = {
+            GB: { symbol: '\u00a3', monthly: 20, annual: 200, country: 'United Kingdom', code: 'GBP' },
+            IE: { symbol: '\u20ac', monthly: 25, annual: 250, country: 'Ireland', code: 'EUR' },
+            DE: { symbol: '\u20ac', monthly: 25, annual: 250, country: 'Europe', code: 'EUR' },
+            FR: { symbol: '\u20ac', monthly: 25, annual: 250, country: 'Europe', code: 'EUR' },
+            ES: { symbol: '\u20ac', monthly: 25, annual: 250, country: 'Europe', code: 'EUR' },
+            IT: { symbol: '\u20ac', monthly: 25, annual: 250, country: 'Europe', code: 'EUR' },
+            NL: { symbol: '\u20ac', monthly: 25, annual: 250, country: 'Europe', code: 'EUR' },
+            BE: { symbol: '\u20ac', monthly: 25, annual: 250, country: 'Europe', code: 'EUR' },
+            AT: { symbol: '\u20ac', monthly: 25, annual: 250, country: 'Europe', code: 'EUR' },
+            PT: { symbol: '\u20ac', monthly: 25, annual: 250, country: 'Europe', code: 'EUR' },
+            AU: { symbol: 'A$', monthly: 45, annual: 450, country: 'Australia', code: 'AUD' },
+            NZ: { symbol: 'NZ$', monthly: 48, annual: 480, country: 'New Zealand', code: 'NZD' },
+            CA: { symbol: 'CA$', monthly: 35, annual: 350, country: 'Canada', code: 'CAD' },
+            US: { symbol: '$', monthly: 25, annual: 250, country: 'United States', code: 'USD' },
+            DEFAULT: { symbol: '$', monthly: 25, annual: 250, country: 'your region', code: 'USD' }
+        };
 
-        // Get spots count from localStorage (fallback) or use default
-        function getLocalSpotsCount() {
-            const stored = localStorage.getItem(SPOTS_STORAGE_KEY);
-            return stored ? parseInt(stored, 10) : 12; // Default to 12 claimed
+        let currentBilling = 'monthly';
+        let detectedRegion = pricingData.DEFAULT;
+
+        function setBilling(type) {
+            currentBilling = type;
+            document.getElementById('monthly-btn').classList.toggle('active', type === 'monthly');
+            document.getElementById('annual-btn').classList.toggle('active', type === 'annual');
+            updatePricing();
         }
 
-        // Update the progress bar UI
-        function updateSpotsUI(claimed) {
-            const remaining = Math.max(0, SPOTS_TOTAL - claimed);
-            const percentage = Math.min(100, (claimed / SPOTS_TOTAL) * 100);
-            
-            const filledBar = document.getElementById('spots-filled-bar');
-            const label = document.getElementById('spots-label');
-            
-            if (filledBar) {
-                filledBar.style.width = percentage + '%';
+        function updatePricing() {
+            const r = detectedRegion;
+            const currencyEl = document.querySelector('.pricing-currency');
+            const priceEl = document.getElementById('practitioner-price');
+            const intervalEl = document.getElementById('practitioner-interval');
+            const periodEl = document.getElementById('practitioner-period');
+            const noteEl = document.querySelector('.pricing-note');
+            const saveBadge = document.querySelector('.save-badge');
+
+            if (currencyEl) currencyEl.textContent = r.symbol;
+
+            if (currentBilling === 'monthly') {
+                priceEl.textContent = r.monthly;
+                intervalEl.textContent = '/month';
+                periodEl.innerHTML = '&nbsp;';
+                saveBadge.textContent = 'Save ' + r.symbol + (r.monthly * 2);
+            } else {
+                priceEl.textContent = r.annual;
+                intervalEl.textContent = '/year';
+                periodEl.textContent = r.symbol + Math.round(r.annual / 12) + '/month billed annually';
+                saveBadge.textContent = 'Save ' + r.symbol + (r.monthly * 2);
             }
-            if (label) {
-                if (remaining === 0) {
-                    label.textContent = 'All spots claimed!';
-                } else {
-                    label.textContent = claimed + ' of ' + SPOTS_TOTAL + ' spots claimed';
+
+            if (noteEl) noteEl.textContent = 'Pricing shown in ' + r.code;
+
+            var regionEl = document.getElementById('detected-region');
+            if (regionEl) regionEl.textContent = r.country;
+        }
+
+        // Detect region via timezone heuristic
+        function detectRegion() {
+            try {
+                var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+                if (tz.startsWith('Europe/London') || tz.startsWith('Europe/Belfast')) return 'GB';
+                if (tz.startsWith('Europe/Dublin')) return 'IE';
+                if (tz.startsWith('Europe/')) {
+                    // Check for specific Euro countries
+                    var euroTz = ['Europe/Paris','Europe/Berlin','Europe/Madrid','Europe/Rome','Europe/Amsterdam','Europe/Brussels','Europe/Vienna','Europe/Lisbon','Europe/Helsinki','Europe/Athens'];
+                    for (var i = 0; i < euroTz.length; i++) { if (tz.startsWith(euroTz[i])) return 'DE'; }
+                    return 'DE'; // Default Euro for other European timezones
                 }
-            }
+                if (tz.startsWith('Australia/')) return 'AU';
+                if (tz.startsWith('Pacific/Auckland') || tz.startsWith('Pacific/Chatham')) return 'NZ';
+                if (tz.startsWith('America/Toronto') || tz.startsWith('America/Vancouver') || tz.startsWith('America/Edmonton') || tz.startsWith('America/Winnipeg') || tz.startsWith('America/Halifax') || tz.startsWith('America/St_Johns')) return 'CA';
+                if (tz.startsWith('America/')) return 'US';
+            } catch (e) {}
+            return 'DEFAULT';
         }
 
-        // Initialize spots counter on page load
-        function initSpotsCounter() {
-            const claimed = getLocalSpotsCount();
-            updateSpotsUI(claimed);
-        }
-
-        // Increment spots count after successful form submission
-        function incrementSpotsCount() {
-            let claimed = getLocalSpotsCount();
-            if (claimed < SPOTS_TOTAL) {
-                claimed++;
-                localStorage.setItem(SPOTS_STORAGE_KEY, claimed.toString());
-                updateSpotsUI(claimed);
-            }
-        }
-
-        // Initialize on page load
-        initSpotsCounter();
+        var regionCode = detectRegion();
+        detectedRegion = pricingData[regionCode] || pricingData.DEFAULT;
+        updatePricing();
     </script>
 <script src="https://cdn.tinystats.net/scripts/capi.js" async></script>
 </body>
